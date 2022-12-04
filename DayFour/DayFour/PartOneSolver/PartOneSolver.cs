@@ -17,19 +17,18 @@ public class PartOneSolver
             {
                 overlapCount++;
             }
+            else if (FullOverlap(elf2Range, elf1Range))
+            {
+                overlapCount++;
+            }
     
         }
 
         return overlapCount;
     }
-    bool FullOverlap(Helpers.CleaningRooms elf1, Helpers.CleaningRooms elf2)
+    private bool FullOverlap(Helpers.CleaningRooms elf1, Helpers.CleaningRooms elf2)
     {
         if (elf1.StartRoom <= elf2.StartRoom && elf1.EndRoom >= elf2.EndRoom)
-        {
-            return true;
-        }
-    
-        if (elf2.StartRoom <= elf1.StartRoom && elf2.EndRoom >= elf1.EndRoom)
         {
             return true;
         }
